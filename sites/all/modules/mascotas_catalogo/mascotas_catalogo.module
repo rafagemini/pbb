@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Mascotas Catalogo feature.
+ */
+
+include_once 'mascotas_catalogo.features.inc';

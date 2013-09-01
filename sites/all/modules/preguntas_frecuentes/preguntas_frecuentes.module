@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Preguntas Frecuentes feature.
+ */
+
+include_once 'preguntas_frecuentes.features.inc';
