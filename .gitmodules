@@ -1,0 +1,3 @@
+[submodule "sites/all/themes/bootstrap"]
+	path = sites/all/themes/bootstrap
+	url = git@github.com:MauriceStark/theme-pbb.git
