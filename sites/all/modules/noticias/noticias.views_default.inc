@@ -23,6 +23,7 @@ function noticias_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Noticias';
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -41,6 +42,17 @@ function noticias_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h2';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: imagen principal  */
+  $handler->display->display_options['fields']['field_imagen_principal_noticia']['id'] = 'field_imagen_principal_noticia';
+  $handler->display->display_options['fields']['field_imagen_principal_noticia']['table'] = 'field_data_field_imagen_principal_noticia';
+  $handler->display->display_options['fields']['field_imagen_principal_noticia']['field'] = 'field_imagen_principal_noticia';
+  $handler->display->display_options['fields']['field_imagen_principal_noticia']['label'] = '';
+  $handler->display->display_options['fields']['field_imagen_principal_noticia']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_imagen_principal_noticia']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_imagen_principal_noticia']['settings'] = array(
+    'image_style' => 'noticia-principal',
+    'image_link' => 'content',
+  );
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -51,18 +63,6 @@ function noticias_views_default_views() {
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '200',
   );
-  /* Field: Content: Galeria */
-  $handler->display->display_options['fields']['field_galeria']['id'] = 'field_galeria';
-  $handler->display->display_options['fields']['field_galeria']['table'] = 'field_data_field_galeria';
-  $handler->display->display_options['fields']['field_galeria']['field'] = 'field_galeria';
-  $handler->display->display_options['fields']['field_galeria']['label'] = '';
-  $handler->display->display_options['fields']['field_galeria']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_galeria']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_galeria']['settings'] = array(
-    'image_style' => 'mascota-catalogo',
-    'image_link' => '',
-  );
-  $handler->display->display_options['fields']['field_galeria']['delta_offset'] = '0';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
