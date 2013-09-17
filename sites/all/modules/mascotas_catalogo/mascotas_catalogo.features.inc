@@ -46,6 +46,7 @@ function mascotas_catalogo_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'mascota-catalogo',
   );
 
   return $styles;

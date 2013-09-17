@@ -10,10 +10,56 @@
 function mascotas_catalogo_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-mascota-field_certificado'
+  $field_instances['node-mascota-field_certificado'] = array(
+    'bundle' => 'mascota',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_certificado',
+    'label' => 'Certificado',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => 'certificados',
+      'file_extensions' => 'txt pdf png jpeg jpg',
+      'max_filesize' => '2 mb',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 9,
+    ),
+  );
+
   // Exported field_instance: 'node-mascota-field_descripcion'
   $field_instances['node-mascota-field_descripcion'] = array(
     'bundle' => 'mascota',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 'Sin Descripción..',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -34,7 +80,7 @@ function mascotas_catalogo_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_descripcion',
     'label' => 'Descripcion',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -240,7 +286,11 @@ function mascotas_catalogo_field_default_field_instances() {
   // Exported field_instance: 'node-mascota-field_nombre'
   $field_instances['node-mascota-field_nombre'] = array(
     'bundle' => 'mascota',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 'Sin Nombre...',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -261,7 +311,7 @@ function mascotas_catalogo_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_nombre',
     'label' => 'Nombre',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -316,6 +366,7 @@ function mascotas_catalogo_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Certificado');
   t('Descripcion');
   t('Edad');
   t('Estado');
