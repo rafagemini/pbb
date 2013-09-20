@@ -1,19 +1,63 @@
-This directory structure contains the settings and configuration files specific
-to your site or sites and is an integral part of multisite configuration.
+Modulos que se deben activar para el funcionamiento del sitio:
 
-The sites/all/ subdirectory structure should be used to place your custom and
-downloaded extensions including modules, themes, and third party libraries.
 
-Downloaded installation profiles should be placed in the /profiles directory
-in the Drupal root.
+-ADMINISTRATION	
 
-In multisite configuration, extensions found in the sites/all directory
-structure are available to all sites. Alternatively, the sites/your_site_name/
-subdirectory pattern may be used to restrict extensions to a specific
-site instance.
+Administration Development tools
+		
+Administration menu
 
-See the respective README.txt files in sites/all/themes and sites/all/modules
-for additional information about obtaining and organizing extensions.
+Administration menu Toolbar style
 
-See INSTALL.txt in the Drupal root for information about single-site
-installation or multisite configuration..
+-CHAOS TOOL SUITE
+
+Chaos tools
+
+-DATE/TIME
+
+Date
+
+Date API
+
+Date Popup
+
+-OTHER
+
+Pathauto
+
+Strongarm
+
+Token
+
+-PANELS
+
+Panel nodes
+
+Panels
+
+Panels In-Place Editor
+
+-USER INTERFACE
+
+jQuery Update
+
+-VIEWS
+
+Views
+
+Views UI
+===================================================================
+Equipo PBB
+
+
+* Mauricio 
+
+Features, subtheme
+
+* Rafa
+
+Modulos Newlester, Donar y Formulario
+
+* Brenda sanchez y Daniela
+
+features y los panels, acerca de, home, servicios 

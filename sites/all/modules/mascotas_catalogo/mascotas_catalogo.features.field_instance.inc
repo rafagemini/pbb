@@ -58,6 +58,7 @@ function mascotas_catalogo_field_default_field_instances() {
     'default_value' => array(
       0 => array(
         'value' => 'Sin Descripción..',
+        'format' => 'filtered_html',
       ),
     ),
     'deleted' => 0,
@@ -82,7 +83,7 @@ function mascotas_catalogo_field_default_field_instances() {
     'label' => 'Descripcion',
     'required' => 1,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -209,7 +210,7 @@ function mascotas_catalogo_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_galeria',
     'label' => 'Galeria',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
@@ -217,7 +218,7 @@ function mascotas_catalogo_field_default_field_instances() {
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '2 mb',
       'max_resolution' => '1000x1000',
-      'min_resolution' => '200x200',
+      'min_resolution' => '300x300',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
@@ -225,7 +226,7 @@ function mascotas_catalogo_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'preview_image_style' => 'medium',
+        'preview_image_style' => 'mascota-catalogo',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',

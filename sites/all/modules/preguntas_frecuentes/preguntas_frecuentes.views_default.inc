@@ -23,6 +23,7 @@ function preguntas_frecuentes_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'FAQ';
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -31,20 +32,27 @@ function preguntas_frecuentes_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '40';
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'views-faq-container';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Pregunta */
   $handler->display->display_options['fields']['field_pregunta']['id'] = 'field_pregunta';
   $handler->display->display_options['fields']['field_pregunta']['table'] = 'field_data_field_pregunta';
   $handler->display->display_options['fields']['field_pregunta']['field'] = 'field_pregunta';
   $handler->display->display_options['fields']['field_pregunta']['label'] = '';
-  $handler->display->display_options['fields']['field_pregunta']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['field_pregunta']['element_type'] = 'h3';
   $handler->display->display_options['fields']['field_pregunta']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_pregunta']['element_default_classes'] = FALSE;
   /* Field: Content: Respuesta */
   $handler->display->display_options['fields']['field_respuesta']['id'] = 'field_respuesta';
   $handler->display->display_options['fields']['field_respuesta']['table'] = 'field_data_field_respuesta';
   $handler->display->display_options['fields']['field_respuesta']['field'] = 'field_respuesta';
   $handler->display->display_options['fields']['field_respuesta']['label'] = '';
+  $handler->display->display_options['fields']['field_respuesta']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_respuesta']['element_class'] = 'faq-answer';
   $handler->display->display_options['fields']['field_respuesta']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_respuesta']['element_default_classes'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';

@@ -23,18 +23,25 @@ function mascotas_catalogo_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Catalogo';
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Buscar';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Ordenar por';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['style_plugin'] = 'grid';
-  $handler->display->display_options['style_options']['columns'] = '3';
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['row_class'] = 'view-mascota';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_options']['class'] = 'list';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -43,14 +50,16 @@ function mascotas_catalogo_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   /* Field: Content: Imagen Principal */
   $handler->display->display_options['fields']['field_imagen_principal']['id'] = 'field_imagen_principal';
   $handler->display->display_options['fields']['field_imagen_principal']['table'] = 'field_data_field_imagen_principal';
   $handler->display->display_options['fields']['field_imagen_principal']['field'] = 'field_imagen_principal';
   $handler->display->display_options['fields']['field_imagen_principal']['label'] = '';
   $handler->display->display_options['fields']['field_imagen_principal']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_imagen_principal']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_imagen_principal']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_imagen_principal']['settings'] = array(
     'image_style' => 'mascota-catalogo',
@@ -60,10 +69,12 @@ function mascotas_catalogo_views_default_views() {
   $handler->display->display_options['fields']['field_estado']['id'] = 'field_estado';
   $handler->display->display_options['fields']['field_estado']['table'] = 'field_data_field_estado';
   $handler->display->display_options['fields']['field_estado']['field'] = 'field_estado';
+  $handler->display->display_options['fields']['field_estado']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Tipo */
   $handler->display->display_options['fields']['field_tipo']['id'] = 'field_tipo';
   $handler->display->display_options['fields']['field_tipo']['table'] = 'field_data_field_tipo';
   $handler->display->display_options['fields']['field_tipo']['field'] = 'field_tipo';
+  $handler->display->display_options['fields']['field_tipo']['type'] = 'taxonomy_term_reference_plain';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -84,6 +95,10 @@ function mascotas_catalogo_views_default_views() {
     'mascota' => 'mascota',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
   /* Filter criterion: Content: Has taxonomy term */
   $handler->display->display_options['filters']['tid']['id'] = 'tid';
   $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
